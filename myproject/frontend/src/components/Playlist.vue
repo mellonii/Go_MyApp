@@ -16,38 +16,47 @@ function greet() {
 }
 */
 
-const songs = ref([]) // ref делает переменную динамической
+const songs = ref([])
+let currentAudio = null // Храним текущий аудио-объект
 
 function addSong(event) {
-  console.log('Сигнал есть')
-
-  const file = event.target.files[0] // Получаем первый выбранный файл
+  const file = event.target.files[0]
   
-  if (!file) return // Если файл не выбран, выходим
-  
-  selectedFile.value = file
+  if (!file) return
   console.log('Добавлен файл:', file.name)
   
-  // Добавляем файл в массив песен
+  const fileUrl = URL.createObjectURL(file)
+  
   songs.value.push({
     name: file.name,
-    size: file.size,
-    type: file.type,
+    url: fileUrl,
     file: file
   })
   
-  event.target.value = '' // Очищаем input, чтобы можно было выбрать тот же файл снова
+  event.target.value = ''
 }
-/*
+
 function playSong(song) {
-  // Проиграть выбранную песню
+  // Если уже есть играющий трек, останавливаем его
+  if (currentAudio) {
+    currentAudio.pause()
+    currentAudio = null
+  }
+  
+  currentAudio = new Audio(song.url)
+  currentAudio.play()
   console.log('Playing:', song.name)
 }
 
 function pauseSong() {
-  // Поставить песню на паузу
-  console.log('Paused')
-}*/
+  if (currentAudio) {
+    currentAudio.pause()
+    console.log('Paused:', currentAudio.src)
+  } else {
+    console.log('Нет активного трека для паузы')
+  }
+}
+
 </script>
 
 <template>
