@@ -7,3 +7,6 @@
 - Vue
 - JavaScript 
 - Go, wails
+
+## На данный момент выглядит так:
+![](myproject/image.png)
