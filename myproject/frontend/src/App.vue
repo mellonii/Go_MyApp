@@ -1,9 +1,11 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'</script>
+import Playlist from './components/Playlist.vue'
+</script>
 
 <template>
-  <img id="logo" alt="Wails logo" src="./assets/images/logo-universal.png"/>
-  <HelloWorld/>
+  <!-- Сюда потом добавлю менюшку верхнюю  -->
+  <!-- Шаблон для картинки меню: <img id="logo" alt="Wails logo" src="./assets/images/logo-universal.png"/>  -->
+  <Playlist/>
 </template>
 
 <style>
