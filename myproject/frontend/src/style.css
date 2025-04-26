@@ -8,4 +8,6 @@ font-family: 'Century Gothic', sans-serif;
 .main-content {
 position: absolute;
 display: flex;
+width: 800px;
+height: 600px;
 }
