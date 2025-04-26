@@ -9,4 +9,4 @@
 - Go, wails
 
 ## На данный момент выглядит так: 
-![](myproject/image.png)
+![alt text](myproject/image.png)
